@@ -65,7 +65,8 @@ def get_resolution(filename):
 def read_video(filename):
     w, h = get_resolution(filename)
 
-    command = ['ffmpeg',
+    command = ['ffmpeg','-hide_banner', 
+            '-loglevel', 'error',
             '-i', filename,
             '-f', 'image2pipe',
             '-pix_fmt', 'bgr24',
